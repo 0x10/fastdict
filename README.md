@@ -1,5 +1,9 @@
 # fastdict
-a c++ library which provides a fast specialized dictionary
+a c++ library which provides a fast specialized dictionary.
+
+Currently the only API it offers is to load a list of ascii words and after that you can use the library to search within any ascii sequence for words from the dictionary.
+
+It uses a deterministic finite automaton under the hood.
 
 # Usage
 ```cpp
@@ -26,3 +30,10 @@ Loading a word list with around 180K words took about 750ms.
 
 Search time with input sequences between 5 and 20 characters: between 5 and 30 microseconds.
 
+
+
+# TODO
+
+  * improve performance by reducing the multipass call for substrings (TODO and concept are already available but won't work yet)
+  * provide better test cases and examples
+  * extend the api for more types of dictionary queries
